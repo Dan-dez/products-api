@@ -15,7 +15,7 @@ import java.time.LocalDate;
  *  "Goodbye from Spring Boot!"
  */
 
-@RestControllerg
+@RestController
 public class HelloController {
 
     @GetMapping("/hello")
