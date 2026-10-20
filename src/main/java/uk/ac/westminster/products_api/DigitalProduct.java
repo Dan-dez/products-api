@@ -1,8 +1,8 @@
 package uk.ac.westminster.products_api;
 
 public class DigitalProduct extends Product{
-    private String downloadUrl;
-    private double fileSizeMB;
+    private final String downloadUrl;
+    private final double fileSizeMB;
 
     public DigitalProduct(String downloadUrl, double fileSizeMB, long id, String name, double price) {
         super(id, name, price);
