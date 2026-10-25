@@ -10,8 +10,17 @@ import java.util.Optional;
 public class ProductService {
     private final List<Product> products = new ArrayList<>();
     private Long nextId = 1L;
+    public ProductService() {
+        products.add(new DigitalProduct(
+                nextId++, "Clean Code (E-book)", 29.99,
+                "/downloads/clean-code.pdf", 4.2));
 
-    public List<Product> getProducts() {
+        products.add(new PhysicalProduct(
+                nextId++, "27-inch Monitor", 249.99,
+                5.4, "61cm x 41cm x 18cm"));
+    }
+
+    public List<Product> getAllProducts() {
         return products;
     }
 
@@ -19,11 +28,6 @@ public class ProductService {
         product.setId(nextId++);
         products.add(product);
         return product;
-    }
-
-
-    public List<Product> getAllProducts() {
-        return products;
     }
 
     public Optional<Product> getProductById(Long id) {

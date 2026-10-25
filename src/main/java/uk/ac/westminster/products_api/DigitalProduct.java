@@ -1,11 +1,16 @@
 package uk.ac.westminster.products_api;
 
-public class DigitalProduct extends Product{
-    private final String downloadUrl;
-    private final double fileSizeMB;
+public class DigitalProduct extends Product {
+    private String downloadUrl;
+    private double fileSizeMB;
 
-    public DigitalProduct(String downloadUrl, double fileSizeMB, long id, String name, double price) {
-        super(id, name, price);
+
+    public DigitalProduct() {
+    }
+
+
+    public DigitalProduct(Long id, String name, double price, String downloadUrl, double fileSizeMB) {
+        super(id, name, price); // MUST be the first statement
         this.downloadUrl = downloadUrl;
         this.fileSizeMB = fileSizeMB;
     }
