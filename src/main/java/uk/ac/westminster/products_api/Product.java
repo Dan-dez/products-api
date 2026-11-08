@@ -37,5 +37,9 @@ public class Product {
         this.name = name;
     }
 
+    public String getSummary() {
+        return getName() + " - £" + getPrice();
+    }
+
 
 }
