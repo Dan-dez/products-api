@@ -2,14 +2,9 @@ package uk.ac.westminster.products_api;
 
 public abstract class Product {
 
-
     private Long id;
     private String name;
     private double price;
-
-
-
-
 
     public Product(Long id, String name, double price) {
         this.id = id;
@@ -18,7 +13,6 @@ public abstract class Product {
     }
 
     public Product() {
-
     }
 
     public Long getId() { return id; }
@@ -37,12 +31,7 @@ public abstract class Product {
         this.name = name;
     }
 
-    public String getSummary() {
-        return getName() + " - £" + getPrice();
-    }
-
-
-    public abstract void applyDiscount(double rate);
-
-    public abstract double getDiscountedPrice();
+    // Activity 3: No body. Product cannot answer this question,
+    // so every concrete subclass MUST answer it.
+    public abstract String getSummary();
 }

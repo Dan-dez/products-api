@@ -12,7 +12,12 @@ import java.util.List;
         private ProductService productService;
         @GetMapping("/{id}")
         public Product getById(@PathVariable Long id) {
-            return new Product(id, "Laptop", 999.99);
+            return new Product(id, "Laptop", 999.99) {
+                @Override
+                public String getSummary() {
+                    return "";
+                }
+            };
         }
         @GetMapping("/products")
         public List<Product> getAllProducts() {
@@ -34,5 +39,7 @@ import java.util.List;
         public List<Product> search(@RequestParam String name) {
         return productService.findByName(name);
         }
+
+
     }
 
