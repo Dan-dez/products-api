@@ -42,4 +42,7 @@ public abstract class Product {
     }
 
 
+    public abstract void applyDiscount(double rate);
+
+    public abstract double getDiscountedPrice();
 }

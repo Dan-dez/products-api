@@ -3,6 +3,7 @@ package uk.ac.westminster.products_api;
 public class DigitalProduct extends Product {
     private String downloadUrl;
     private double fileSizeMB;
+    private double discountedPrice;
 
 
     public DigitalProduct() {
@@ -27,4 +28,16 @@ public class DigitalProduct extends Product {
     public String getSummary() {
         return "Digital: " + getName() + " | Download: " + getDownloadUrl();
     }
+
+    @Override
+    public void applyDiscount(double rate) {
+        this.discountedPrice = getPrice() * (1 - rate);
+    }
+
+    @Override
+    public double getDiscountedPrice() {
+        return discountedPrice;
+    }
+
+
 }
